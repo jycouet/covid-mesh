@@ -18,5 +18,16 @@ transforms:
       extend type Case {
         population: ApiPopulation
       }
+      extend type Query {
+        stat(country: String!): Stat
+      }
+      type Stat {
+        confirmedRatio: Float
+        deathRatio: Float
+        recoveredRatio: Float
+        case: Case
+        population: ApiPopulation
+      }
 additionalResolvers:
   - ./src/case-additional-resolvers.js
+  - ./src/query-additional-resolvers.js
