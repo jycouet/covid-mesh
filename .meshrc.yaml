@@ -19,4 +19,4 @@ transforms:
         population: ApiPopulation
       }
 additionalResolvers:
-  - ./src/additional-resolvers.js
+  - ./src/case-additional-resolvers.js

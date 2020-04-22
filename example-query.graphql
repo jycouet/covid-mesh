@@ -1,5 +1,5 @@
-# Write your query or mutation here
-query getData {
+# 2 sources side by site
+query getData_step1 {
   case(countryRegion: "France") {
     confirmed
     deaths
@@ -11,6 +11,23 @@ query getData {
       fields {
         value
         country_name
+      }
+    }
+  }
+}
+
+# 2 sources combined
+query getData_step2 {
+  case(countryRegion: "France") {
+    confirmed
+    deaths
+    recovered
+    countryRegion
+    population {
+      records {
+        fields {
+          value
+        }
       }
     }
   }
